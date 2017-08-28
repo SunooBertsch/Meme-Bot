@@ -1,5 +1,5 @@
-#NoMemesGivenBot
-##Telegram Bot: meme-bot
+# NoMemesGivenBot
+## Telegram Bot: meme-bot
 
 *Developers* <br />
 **Dennis Dang** <br/>
