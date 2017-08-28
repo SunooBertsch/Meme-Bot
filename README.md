@@ -1,6 +1,6 @@
 #NoMemesGivenBot
 ##Telegram Bot: meme-bot
 
-*Developers*
-**Dennis Dang**
+*Developers* <br />
+**Dennis Dang** <br/>
 **Sunoo Bertsch**
