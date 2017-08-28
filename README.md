@@ -1,4 +1,4 @@
-# NoMemesGivenBot
+
 ## Telegram Bot: meme-bot
 
 *Developers* <br />
