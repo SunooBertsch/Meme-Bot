@@ -1,0 +1,26 @@
+{
+  "name": "telegram-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SunooBertsch/TelegramBotReactJS.git"
+  },
+  "keywords": [
+    "telegram"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SunooBertsch/TelegramBotReactJS/issues"
+  },
+  "homepage": "https://github.com/SunooBertsch/TelegramBotReactJS#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "telegraf": "^3.10.1"
+  }
+}
