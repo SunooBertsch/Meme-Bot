@@ -1,5 +1,5 @@
 
-## Telegram Bot: meme-bot
+## Telegram Bot: residual-bot
 
 *Developers* <br />
 **Dennis Dang** <br/>
