@@ -1,7 +1,7 @@
 const Telegraf = require("telegraf");
 const keys = require("./keys");
 const app = new Telegraf(keys.clientID);
-// const { Extra, Markup } = require("telegraf");
+const menus = require("./menus")(app, Telegraf);
 
 // app.on("text", ctx => {
 //   ctx.reply(":)", Extra.markup(m => m.removeKeyboard()));
@@ -15,33 +15,16 @@ app.command("/start", ctx => {
   return ctx
     .reply(
       `💠 Welcome to Team Unstoppable! 💠 \n\nI'm Team Unstoppable's Bot.\n\nMy role is to get you started correctly and to get you started fast by what we call 'Triple T':\n\n1) Welcome to the team\n2) Training\n3) Travel Party\n\nClick the "*Welcome to the Team*🤗" button below to see your first steps!`,
-      home
+      menus.home
     )
     .then();
 });
-
-/************
-  HOME MENU
-@welcometotheteam, training, travelparty, help
-*************/
-
-const home = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [
-        m.callbackButton("Welcome To The Team 🤗"),
-        m.callbackButton("Training 🥊")
-      ],
-      [m.callbackButton("Travel Party 🎉"), m.callbackButton("Help 🔑")]
-    ])
-  );
 
 /*
 * 'Home' reply
 */
 app.hears("Home 🏠", ctx => {
-  return ctx.reply("Home", home).then();
+  return ctx.reply("Home", menus.home).then();
 });
 
 /*
@@ -49,7 +32,7 @@ app.hears("Home 🏠", ctx => {
 ** @DIRECT TO 'TEAM RESOURCES'
 */
 app.hears("Welcome To The Team 🤗", ctx => {
-  return ctx.reply("Team Resources", teamResources).then();
+  return ctx.reply("Team Resources", menus.teamResources).then();
 });
 
 /*
@@ -57,7 +40,7 @@ app.hears("Welcome To The Team 🤗", ctx => {
 ** @DIRECT TO 'TRAINING'
 */
 app.hears("Training 🥊", ctx => {
-  return ctx.reply("Training", training).then();
+  return ctx.reply("Training", menus.training).then();
 });
 
 /*
@@ -65,30 +48,16 @@ app.hears("Training 🥊", ctx => {
 ** @DIRECT TO 'TRAVEL PARTY'
 */
 app.hears("Travel Party 🎉", ctx => {
-  return ctx.reply("Travel Party", travelParty).then();
+  return ctx.reply("Travel Party", menus.travelParty).then();
 });
 
 /*
 * 'Help' reply
 ** @DIRECT TO 'HELP'
 */
-// app.hears("Help 🔑", ctx => {
-//   return ctx.reply("Help", help).then();
-// });
-
-/*********************
-  Team Resources Menu
-@teamchats, teamapps, facebook groups, home
-*********************/
-
-const teamResources = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [m.callbackButton("Team Chats 👫"), m.callbackButton("Team Apps 📱")],
-      [m.callbackButton("Facebook Groups 🌎"), m.callbackButton("Home 🏠")]
-    ])
-  );
+app.hears("Help 🔑", ctx => {
+  return ctx.reply("Help", menus.help).then();
+});
 
 /*
 * 'Team Chats' reply
@@ -123,20 +92,6 @@ app.hears("Facebook Groups 🌎", ctx => {
     .then();
 });
 
-/*********************
-  TRAINING Menu
-@teamchats, teamapps, facebook groups, home
-*********************/
-
-const training = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [m.callbackButton("Events 🏋️"), m.callbackButton("Audios 🎧")],
-      [m.callbackButton("Home 🏠")]
-    ])
-  );
-
 /*
 * 'Events' reply
 */
@@ -159,24 +114,6 @@ app.hears("Audios 🎧", ctx => {
     .then();
 });
 
-/*********************
-  TRAVEL PARTY Menu
-@whats a tp, etiquette, how to invite, checklist, home
-*********************/
-
-const travelParty = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [
-        m.callbackButton("What's​ ​a​ ​TP 🎊?​"),
-        m.callbackButton("Etiquette​ 🎩")
-      ],
-      [m.callbackButton("How to Invite 📲"), m.callbackButton("Checklist ✅")],
-      [m.callbackButton("Home 🏠")]
-    ])
-  );
-
 /*
 * 'What's a Travel Party' reply
 */
@@ -184,7 +121,7 @@ app.hears("What's​ ​a​ ​TP 🎊?​", ctx => {
   return ctx
     .reply(
       "A Travel Party is an event that we hold in your house/apartment (no matter how big/small and messy/clean) where we bring together your friends and family to present to them all at the same time.\n\nThis is the launch event for your business and, trust me, everyone has one.\n\nClick the “Etiquette​ ​🎩”​ ​tab below to learn how to throw your first Travel Party launch event!",
-      travelParty
+      menus.travelParty
     )
     .then();
 });
@@ -194,23 +131,8 @@ app.hears("What's​ ​a​ ​TP 🎊?​", ctx => {
 * DIRECT@ TO ETIQUETTE MENU
 */
 app.hears("Etiquette​ 🎩", ctx => {
-  return ctx.reply("Etiquette​", etiquette).then();
+  return ctx.reply("Etiquette​", menus.etiquette).then();
 });
-
-/*********************
-  ETIQUETTE Menu
-@wv support, rovia/dreamtrips, goldsupport, platinum support, home
-*********************/
-
-const etiquette = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [m.callbackButton("Edification 🗣"), m.callbackButton("Before ⏪")],
-      [m.callbackButton("During ▶️"), m.callbackButton("After ⏩ ")],
-      [m.callbackButton("Back ↩️")]
-    ])
-  );
 
 /*
 * 'Edification 🗣' reply 
@@ -261,7 +183,7 @@ app.hears("After ⏩", ctx => {
 * DIRECT@ TO ETIQUETTE MENU
 */
 app.hears("Back ↩️", ctx => {
-  return ctx.reply("Back", travelParty).then();
+  return ctx.reply("Back", menus.travelParty).then();
 });
 
 /*
@@ -269,47 +191,12 @@ app.hears("Back ↩️", ctx => {
 * DIRECT@ TO HOW TO INVITE MENU
 */
 app.hears("How to Invite 📲", ctx => {
-  return ctx.reply("How to Invite", howToInvite).then();
+  return ctx.reply("How to Invite", menus.howToInvite).then();
 });
-
-/*********************
-  HOW TO INVITE MENU
-@make a list, flye, close friends and family, strangers, back
-*********************/
-
-const howToInvite = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [m.callbackButton("Make a List 📝"), m.callbackButton("FLYE ❇️")],
-      [
-        m.callbackButton("Close Friends/Family ❤️"),
-        m.callbackButton("Strangers 🖤")
-      ],
-      [m.callbackButton("Back ↩️")]
-    ])
-  );
 
 app.hears("Make a List 📝", ctx => {
-  return ctx.reply("Making a List", makeAList).then();
+  return ctx.reply("Making a List", menus.makeAList).then();
 });
-
-/*********************
-  MAKE A LIST MENU
-@make a list, inviting fundamenals, back
-*********************/
-
-const makeAList = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [
-        m.callbackButton("1) Make a List 📝"),
-        m.callbackButton("2) Inviting Fundamentals 📞")
-      ],
-      [m.callbackButton("Back: How To Invite ↩️")]
-    ])
-  );
 
 /*
 * '1) Make a list' reply
@@ -337,14 +224,14 @@ app.hears("2) Inviting Fundamentals 📞", ctx => {
 * 'Back: How To Invite ↩️' reply
 */
 app.hears("Back: How To Invite ↩️", ctx => {
-  return ctx.reply("How to Invite", howToInvite).then();
+  return ctx.reply("How to Invite", menus.howToInvite).then();
 });
 
 /*
 * 'FLYE' reply
 * NEEDS TO SEND FLYE PICTURE STILL
 */
-app.hears("FLYE ❇️", ctx => {
+app.hears("FLYE ❇", ctx => {
   return ctx
     .reply(
       "STEP 1:​\nYou - “Hey Bob! Trust all is well! I got an important question for you...”\n​Bob - “What’s up?”\n\nSTEP 2:​\nYou - “Have you seen this yet!!?”\n\nSTEP 3:​ \nYou - “I got early access!! We got to talk before this thing goes viral!!\nYou free today to grab coffee real quick?”\n\n🚫 Make sure the pic you are sending does NOT include the word “FLYE” on it.\n📲 For more options, go to “Step 5” in the “Flye” Section from the ChillinWW App.\nPassword: boomer1"
@@ -356,26 +243,9 @@ app.hears("FLYE ❇️", ctx => {
 * 'Close Friends/Family' reply
 * DIRECT@ CLOSE FRIENDS/FAMILY MENU
 */
-app.hears("Close Friends/Family ❤️", ctx => {
-  return ctx.reply("Close Friends/Family", closeFriendsAndFamily).then();
+app.hears("Close Friends/Family ❤", ctx => {
+  return ctx.reply("Close Friends/Family", menus.closeFriendsAndFamily).then();
 });
-
-/*********************
-  Close Friends/Family Menu
-@2 step text, tp text, acquaintances, back
-*********************/
-
-const closeFriendsAndFamily = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [m.callbackButton("2 Step Text 📲"), m.callbackButton("TP Text 🎊")],
-      [
-        m.callbackButton("Acquaintances 💛"),
-        m.callbackButton("Back: How To Invite ↩️")
-      ]
-    ])
-  );
 
 /*
 * '2 Step Text 📲' reply
@@ -429,20 +299,6 @@ app.hears("Checklist ✅", ctx => {
   return ctx.reply("Checklist", checklist).then();
 });
 
-/*********************
-  CHECKLIST MENU
-@checklist, presentation, back
-*********************/
-
-const checklist = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [m.callbackButton("✅ Checklist ✅"), m.callbackButton("Presentation 💻")],
-      [m.callbackButton("Back ↩️")]
-    ])
-  );
-
 /*
 * 'Checklist ✅ ' reply
 */
@@ -464,35 +320,6 @@ app.hears("Presentation 💻", ctx => {
     )
     .then();
 });
-
-/*
-* 'Help 🔑' reply
-*/
-app.hears("Help 🔑", ctx => {
-  return ctx.reply("Help", help).then();
-});
-
-/*********************
-  HELP Menu
-@teamchats, teamapps, facebook groups, home
-*********************/
-
-const help = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [
-        m.callbackButton("VW Support 🌎"),
-        m.callbackButton("Rovia/Dreamtrips 🛩")
-      ],
-      [
-        m.callbackButton("Gold​ ​Support 🔱"),
-        m.callbackButton("Platinum​ ​Support​ 👑")
-      ],
-
-      [m.callbackButton("Home 🏠")]
-    ])
-  );
 
 /*
 * 'VW Support 🌎' reply
@@ -532,30 +359,8 @@ app.hears("Gold​ ​Support 🔱", ctx => {
 * DIRECT@ TO PLATINUM SUPPORT MENU
 */
 app.hears("Platinum​ ​Support​ 👑", ctx => {
-  return ctx.reply("Platinum Support", platinum).then();
+  return ctx.reply("Platinum Support", menus.platinum).then();
 });
-
-/*********************
-  PLATINUM SUPPORT MENU
-@concierge, teledoc, roadside assistance, emergency evac,
-identity protection, back
-*********************/
-
-const platinum = Telegraf.Extra
-  .markdown()
-  .markup(m =>
-    m.keyboard([
-      [m.callbackButton("Concierge ☎️"), m.callbackButton("Teledoc 🤒")],
-      [
-        m.callbackButton("Roadside Assistance 🚙"),
-        m.callbackButton("Emergency Evac 🚁")
-      ],
-      [
-        m.callbackButton("Identity Theft Protection 🔐"),
-        m.callbackButton("Back: Help ↩️")
-      ]
-    ])
-  );
 
 /*
 * 'Concierge ☎️' reply
@@ -614,7 +419,7 @@ app.hears("Identity Theft Protection 🔐", ctx => {
 * 'Back: Help ↩️' reply
 */
 app.hears("Back: Help ↩️", ctx => {
-  return ctx.reply("Help", help).then();
+  return ctx.reply("Help", menus.menus.help).then();
 });
 
 /*********
