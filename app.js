@@ -178,7 +178,7 @@ const travelParty = Telegraf.Extra
   );
 
 /*
-* 'Travel Party' reply
+* 'What's a Travel Party' reply
 */
 app.hears("What's​ ​a​ ​TP 🎊?​", ctx => {
   return ctx
@@ -194,12 +194,7 @@ app.hears("What's​ ​a​ ​TP 🎊?​", ctx => {
 * DIRECT@ TO ETIQUETTE MENU
 */
 app.hears("Etiquette​ 🎩", ctx => {
-  return ctx
-    .reply(
-      "A Travel Party is an event that we hold in your house/apartment (no matter how big/small and messy/clean) where we bring together your friends and family to present to them all at the same time.\n\nThis is the launch event for your business and, trust me, everyone has one.\n\nClick the “Etiquette​ ​🎩”​ ​tab below to learn how to throw your first Travel Party launch event!",
-      etiquette
-    )
-    .then();
+  return ctx.reply("Etiquette​", etiquette).then();
 });
 
 /*********************
@@ -266,7 +261,208 @@ app.hears("After ⏩", ctx => {
 * DIRECT@ TO ETIQUETTE MENU
 */
 app.hears("Back ↩️", ctx => {
-  return ctx.reply("Back", etiquette).then();
+  return ctx.reply("Back", travelParty).then();
+});
+
+/*
+* 'How To Invite' reply
+* DIRECT@ TO HOW TO INVITE MENU
+*/
+app.hears("How to Invite 📲", ctx => {
+  return ctx.reply("How to Invite", howToInvite).then();
+});
+
+/*********************
+  HOW TO INVITE MENU
+@make a list, flye, close friends and family, strangers, back
+*********************/
+
+const howToInvite = Telegraf.Extra
+  .markdown()
+  .markup(m =>
+    m.keyboard([
+      [m.callbackButton("Make a List 📝"), m.callbackButton("FLYE ❇️")],
+      [
+        m.callbackButton("Close Friends/Family ❤️"),
+        m.callbackButton("Strangers 🖤")
+      ],
+      [m.callbackButton("Back ↩️")]
+    ])
+  );
+
+app.hears("Make a List 📝", ctx => {
+  return ctx.reply("Making a List", makeAList).then();
+});
+
+/*********************
+  MAKE A LIST MENU
+@make a list, inviting fundamenals, back
+*********************/
+
+const makeAList = Telegraf.Extra
+  .markdown()
+  .markup(m =>
+    m.keyboard([
+      [
+        m.callbackButton("1) Make a List 📝"),
+        m.callbackButton("2) Inviting Fundamentals 📞")
+      ],
+      [m.callbackButton("Back: How To Invite ↩️")]
+    ])
+  );
+
+/*
+* '1) Make a list' reply
+*/
+app.hears("1) Make a List 📝", ctx => {
+  return ctx
+    .reply(
+      "First things first---MAKE YOUR LIST! Once you create your list, have it with you at ALL times, so you’ll be able to add to it whenever you meet someone new!\n\n👇 Watch QuickCoach to learn how to master your list:\nhttps://youtu.be/Se3EZ_ZYLWA"
+    )
+    .then();
+});
+
+/*
+* '2) Inviting fundamentals' reply
+*/
+app.hears("2) Inviting Fundamentals 📞", ctx => {
+  return ctx
+    .reply(
+      "The close starts in the invite! If you don’t effectively invite people to see the information, your business won’t grow!\n\nNote: Always make sure your friend/family member knows you’re going to be sharing something with them. We never want to mislead anyone.\n\n👇 Watch QuickCoach to learn how to be a Master Inviter:\nhttps://youtu.be/ozUvHrKvn1g"
+    )
+    .then();
+});
+
+/*
+* 'Back: How To Invite ↩️' reply
+*/
+app.hears("Back: How To Invite ↩️", ctx => {
+  return ctx.reply("How to Invite", howToInvite).then();
+});
+
+/*
+* 'FLYE' reply
+* NEEDS TO SEND FLYE PICTURE STILL
+*/
+app.hears("FLYE ❇️", ctx => {
+  return ctx
+    .reply(
+      "STEP 1:​\nYou - “Hey Bob! Trust all is well! I got an important question for you...”\n​Bob - “What’s up?”\n\nSTEP 2:​\nYou - “Have you seen this yet!!?”\n\nSTEP 3:​ \nYou - “I got early access!! We got to talk before this thing goes viral!!\nYou free today to grab coffee real quick?”\n\n🚫 Make sure the pic you are sending does NOT include the word “FLYE” on it.\n📲 For more options, go to “Step 5” in the “Flye” Section from the ChillinWW App.\nPassword: boomer1"
+    )
+    .then();
+});
+
+/*
+* 'Close Friends/Family' reply
+* DIRECT@ CLOSE FRIENDS/FAMILY MENU
+*/
+app.hears("Close Friends/Family ❤️", ctx => {
+  return ctx.reply("Close Friends/Family", closeFriendsAndFamily).then();
+});
+
+/*********************
+  Close Friends/Family Menu
+@2 step text, tp text, acquaintances, back
+*********************/
+
+const closeFriendsAndFamily = Telegraf.Extra
+  .markdown()
+  .markup(m =>
+    m.keyboard([
+      [m.callbackButton("2 Step Text 📲"), m.callbackButton("TP Text 🎊")],
+      [
+        m.callbackButton("Acquaintances 💛"),
+        m.callbackButton("Back: How To Invite ↩️")
+      ]
+    ])
+  );
+
+/*
+* '2 Step Text 📲' reply
+*/
+app.hears("2 Step Text 📲", ctx => {
+  return ctx
+    .reply(
+      "Make things natural and easy! If you’re used to texting your closest friends/family, then this is the perfect format to go about the invite!\n\n👇 Watch QuickCoach to learn how to text properly:\nhttps://youtu.be/X1j5yvnkA6U"
+    )
+    .then();
+});
+
+/*
+* 'TP Text 🎊' reply
+*/
+app.hears("TP Text 🎊", ctx => {
+  return ctx
+    .reply(
+      "Getting your friends and family to a TP is a little different. You’re inviting them to your house/apartment at a specific time, so you want to stay in control.\n\n👇 Watch QuickCoach to learn how to get the butts in the seats:\nhttps://youtu.be/_LbGpUMnv3I"
+    )
+    .then();
+});
+
+/*
+* 'Acquaintances 💛' reply
+*/
+app.hears("Acquaintances 💛", ctx => {
+  return ctx
+    .reply(
+      "Have friends/family who you haven’t spoken to in forever? Don’t worry! We got that invite covered too!! Some of our best members/reps have joined because an old friend had the guts to invite them as well.\n\n👇 Learn from NMD David Townsend---the master of lukewarm market:\nhttps://youtu.be/buWUxDs2_Sw"
+    )
+    .then();
+});
+
+/*
+* 'Strangers 🖤' reply
+*/
+app.hears("Strangers 🖤", ctx => {
+  return ctx
+    .reply(
+      "If you haven’t finished your list of Close Friends/Family or Acquaintances, go back and invite them out! The key to building your business is trust​.\n\nMake the stranger into a friend first before inviting them to see your WV baby!"
+    )
+    .then();
+});
+
+/*
+* 'Checklist ✅ ' reply
+* DIRECT@ TO CHECKLIST MENU
+*/
+app.hears("Checklist ✅", ctx => {
+  return ctx.reply("Checklist", checklist).then();
+});
+
+/*********************
+  CHECKLIST MENU
+@checklist, presentation, back
+*********************/
+
+const checklist = Telegraf.Extra
+  .markdown()
+  .markup(m =>
+    m.keyboard([
+      [m.callbackButton("✅ Checklist ✅"), m.callbackButton("Presentation 💻")],
+      [m.callbackButton("Back ↩️")]
+    ])
+  );
+
+/*
+* 'Checklist ✅ ' reply
+*/
+app.hears("✅ Checklist ✅", ctx => {
+  return ctx
+    .reply(
+      "KEEP IT SIMPLE & DUPLICATABLE\n\n✅ Music--before & after prez. Keep it clean, loud & upbeat! You can find the TP Mix in the “Audios” section of the ChillinWW App.\n✅  Printed Applications--Enough for all guests! You can find them in the “File” section of our Team Unstoppable Channel or in your BackOffice (www.domain.worldventures.biz).\n✅ Updated Presentation--Downloaded to Smart TV/Laptop\n✅ Technology--test all tech at least 3hrs prior to starting\n✅ Seating--facing away from the doorway\n✅ Snacks--simple chips/dip & water. No elaborate meals!"
+    )
+    .then();
+});
+
+/*
+* 'Presentation 💻' reply
+*/
+app.hears("Presentation 💻", ctx => {
+  return ctx
+    .reply(
+      "FLYE Presentation to share with prospects:\nLink: https://vimeo.com/228471923\nPassword: iwantone\n\n❌ Do NOT share the downloadable link below for exposures.\nThis is just for reps to download for convenience!!\n\n**Downloadable Link: http://bit.ly/2ubCZOz ❌"
+    )
+    .then();
 });
 
 /*********************
