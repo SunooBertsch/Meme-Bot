@@ -12,9 +12,9 @@ const app = new Telegraf(keys.clientID);
 * @parameters text, 'welcome' keyboard markup
 */
 app.command("/start", ctx => {
-  return ctx
+  ctx
     .reply(
-      `💠 Welcome to Team Unstoppable! 💠 \n\nI'm Team Unstoppable's Bot.\n\nMy role is to get you started correctly and to get you started fast by what we call 'Triple T':\n\n1) Welcome to the team\n2) Training\n3) Travel Party\n\nClick the "*Welcome to the Team*🤗" button below to see your first steps!`,
+      "Welcome to Team Unstoppable❗️ \n\nI'm Team Unstoppable's Bot.\n\nMy role is to get you started correctly and to get you started fast by what we call 'Triple T':\n\n1) Welcome to the team\n2) Training\n3) Travel Party\n\nClick the \"*Welcome to the Team*❗️\" button below to see your first steps!",
       home
     )
     .then();
@@ -96,7 +96,7 @@ const teamResources = Telegraf.Extra
 app.hears("Team Chats 👫", ctx => {
   return ctx
     .reply(
-      "💠 Team Unstoppable Channel 💠 \n Big training events, team calls, team bonding, rank recognition will be announced here. Pay attention to this page as much as possible.\n\n✅ Add business reps ONLY to this channel!\nClick the link below to join now!\n t.me/UnstoppableChannel\n\n💠 Team Unstoppable Chat 💠 \n A group chat to stay plugged in to our team members from around the world! Welcome your new teammates, post travel parties, and recognize new ranks here, too.\n\n ✅ Add business reps ONLY to this chat! \n Click the link below to join now! \n t.me/UnstoppableGroupChat"
+      "Telegram is the number one way the team maintains communication with each other via the channel and chat below…\n\n💠 Team Unstoppable Channel 💠 \n Big training events, team calls, team bonding, rank recognition will be announced here. Pay attention to this page as much as possible.\n\n✅ Add business reps ONLY to this channel!\nClick the link below to join now!\n t.me/UnstoppableChannel\n\n💠 Team Unstoppable Chat 💠 \n A group chat to stay plugged in to our team members from around the world! Welcome your new teammates, post travel parties, and recognize new ranks here, too.\n\n ✅ Add business reps ONLY to this chat! \n Click the link below to join now! \nt.me/UnstoppableGroupChat"
     )
     .then();
 });
@@ -143,7 +143,7 @@ const training = Telegraf.Extra
 app.hears("Events 🏋️", ctx => {
   return ctx
     .reply(
-      "Learners are earners! Training events are a HUGE piece to the WV success formula, and the best part is we’re learning from the best of the best in our company who teach us EXACTLY how they reached the top ranks in the company. We’re going to be completely honest here: we’ve never met a rep that has had big, long-lasting success in this company without trainings.\n\nRegister for the next training event now before it sells out!\nwveventreg.com\nwveventreg.com\nwveventreg.com"
+      "Learners are earners!\n\n Training events are a HUGE piece to the WV success formula, and the best part is we’re learning from the best of the best in our company who teach us EXACTLY how they reached the top ranks in the company. There has never been a rep that has had big, long-lasting success in this company without trainings.\n\nRegister for the next training event now before it sells out!\nwveventreg.com\nwveventreg.com\nwveventreg.com"
     )
     .then();
 });
@@ -154,7 +154,7 @@ app.hears("Events 🏋️", ctx => {
 app.hears("Audios 🎧", ctx => {
   return ctx
     .reply(
-      "Start feeding your brain before one of our big events by listening to audios in the...\n\n💠 ChillinWW App 💠\nHead over to the “Audios” section in the ChillinWW App for FREE audio experience by your Top Leaders in WV!\n\n💠 Advantage Lite 💠\nTake your listening to the next level!! For only $5.99/mo, you’ll gain access to a handful of audios by our top leaders, the E-Version of our recent Voyager Magazines, AND be invited to The Secret Advantage FB Group---where top leaders go LIVE!!\n\n✅ Sign-up in your BackOffice (domain.worldventures.biz)\n\n💠 Advantage 💠\nThe more you invest, the more you’ll gain. Unlock the entire WV Library of Audios and Video by your top leaders & amazing speakers from around the world! For $19.99/mo, you’ll also have 3 Audio CD’s, Voyager, and Success Magazines mailed out to you. Worth it!\n\n✅ Sign-up in your BackOffice (domain.worldventures.biz)"
+      "Start feeding your brain before one of the big events by listening to audios in the...\n\n💠 ChillinWW App 💠\nHead over to the “Audios” section in the ChillinWW App for FREE audio experience by your Top Leaders in WV!\n\n💠 Advantage Lite 💠\nTake your listening to the next level!! For only $5.99/mo, you’ll gain access to a handful of audios by our top leaders, the E-Version of our recent Voyager Magazines, AND be invited to The Secret Advantage FB Group---where top leaders go LIVE!!\n\n✅ Sign-up in your BackOffice (domain.worldventures.biz)\n\n💠 Advantage 💠\nThe more you invest, the more you’ll gain. Unlock the entire WV Library of Audios and Video by your top leaders & amazing speakers from around the world! For $19.99/mo, you’ll also have 3 Audio CD’s, Voyager, and Success Magazines mailed out to you. Worth it!\n\n✅ Sign-up in your BackOffice (domain.worldventures.biz)"
     )
     .then();
 });
@@ -183,7 +183,7 @@ const travelParty = Telegraf.Extra
 app.hears("What's​ ​a​ ​TP 🎊?​", ctx => {
   return ctx
     .reply(
-      "A Travel Party is an event that we hold in your house/apartment (no matter how big/small and messy/clean) where we bring together your friends and family to present to them all at the same time.\n\nThis is the launch event for your business and, trust me, everyone has one.\n\nClick the “Etiquette​ ​🎩”​ ​tab below to learn how to throw your first Travel Party launch event!",
+      "A Travel Party is an event that the team holds in your house/apartment (no matter how big/small and messy/clean) where we bring together your friends and family to present to them all at the same time.\n\nThis is the launch event for your business and, trust me, everyone has one.\n\nClick the “Etiquette​ ​🎩”​ ​tab below to learn how to throw your first Travel Party launch event!",
       travelParty
     )
     .then();
@@ -213,7 +213,7 @@ const etiquette = Telegraf.Extra
   );
 
 /*
-* 'Edification 🗣' reply 
+* 'Edification 🗣' reply
 */
 app.hears("Edification 🗣", ctx => {
   return ctx
@@ -224,18 +224,18 @@ app.hears("Edification 🗣", ctx => {
 });
 
 /*
-* 'Before ⏪' reply 
+* 'Before ⏪' reply
 */
 app.hears("Before ⏪", ctx => {
   return ctx
     .reply(
-      "Guests may feel awkward coming into the TP, so there are some things we can do to keep them from feeling weird. Guests are more likely to make a decision when they’re comfortable!\n\n👇 Watch QuickCoach to learn how to prep before the Presentation:\nhttps://youtu.be/Ezk3vmHqX3c"
+      "Guests may feel awkward coming into the TP, so there are some things you can do to keep them from feeling weird. Guests are more likely to make a decision when they’re comfortable!\n\n👇 Watch QuickCoach to learn how to prep before the Presentation:\nhttps://youtu.be/Ezk3vmHqX3c"
     )
     .then();
 });
 
 /*
-* 'During ▶️' reply 
+* 'During ▶️' reply
 */
 app.hears("During ▶️", ctx => {
   return ctx
@@ -246,7 +246,7 @@ app.hears("During ▶️", ctx => {
 });
 
 /*
-* 'After ⏩' reply 
+* 'After ⏩' reply
 */
 app.hears("After ⏩", ctx => {
   return ctx
@@ -328,7 +328,7 @@ app.hears("1) Make a List 📝", ctx => {
 app.hears("2) Inviting Fundamentals 📞", ctx => {
   return ctx
     .reply(
-      "The close starts in the invite! If you don’t effectively invite people to see the information, your business won’t grow!\n\nNote: Always make sure your friend/family member knows you’re going to be sharing something with them. We never want to mislead anyone.\n\n👇 Watch QuickCoach to learn how to be a Master Inviter:\nhttps://youtu.be/ozUvHrKvn1g"
+      "The close starts in the invite! If you don’t effectively invite people to see the information, your business won’t grow!\n\nNote: Always make sure your friend/family member knows you’re going to be sharing something with them. You never want to mislead anyone.\n\n👇 Watch QuickCoach to learn how to be a Master Inviter:\nhttps://youtu.be/ozUvHrKvn1g"
     )
     .then();
 });
