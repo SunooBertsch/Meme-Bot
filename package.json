@@ -11,7 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/SunooBertsch/TelegramBotReactJS.git"
   },
-  "keywords": ["telegram"],
+  "keywords": [
+    "telegram"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -20,6 +22,7 @@
   "homepage": "https://github.com/SunooBertsch/TelegramBotReactJS#readme",
   "dependencies": {
     "axios": "^0.16.2",
+    "fs": "0.0.1-security",
     "telegraf": "^3.10.1"
   }
 }
