@@ -18,7 +18,7 @@ module.exports = (app, Telegraf) => {
 			m
 				.keyboard([
 					[
-						m.callbackButton("VW Support 🌎"),
+						m.callbackButton("WV Support 🌎"),
 						m.callbackButton("Rovia/Dreamtrips 🛩")
 					],
 					[
