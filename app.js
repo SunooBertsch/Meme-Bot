@@ -2,7 +2,6 @@ const Telegraf = require("telegraf");
 const keys = require("./keys");
 const app = new Telegraf(keys.clientID);
 
-// Markups and listeners are consolidated into separate components
 require("./components/home")(app, Telegraf);
 require("./components/team-resources")(app, Telegraf);
 require("./components/training")(app, Telegraf);

@@ -1,30 +1,9 @@
 const fs = require("fs");
 
 module.exports = (app, Telegraf) => {
-  // const downloadPhotoMiddleware = (ctx, next) => {
-  // 	return app.telegram.getFileLink(ctx.message.photo[0]).then(link => {
-  // 		ctx.state.fileLink = link;
-  // 		return next();
-  // 	});
-  // };
-
-  // app.on("photo", downloadPhotoMiddleware, (ctx, next) => {
-  // 	console.log("Photo url:", ctx.state.fileLink);
-  // 	return ctx.replyWithPhoto({ source: "./FLYE.jpg" });
-  // });
-
-  /*
-	* 'Travel Party 🎉' reply
-	** @DIRECT TO 'TRAVEL PARTY'
-	*/
   app.hears("Travel Party 🎉", ctx => {
     return ctx.reply("Travel Party", travelParty).then();
   });
-
-  /*********************
-	  TRAVEL PARTY Menu
-	@whats a tp, etiquette, how to invite, checklist, home
-	*********************/
 
   const travelParty = Telegraf.Extra
     .markdown()
@@ -44,9 +23,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* 'What's a Travel Party' reply
-	*/
   app.hears("What's​ ​a​ ​TP? 🎊", ctx => {
     return ctx
       .reply(
@@ -56,18 +32,9 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Etiquette​ 🎩' reply
-	* DIRECT@ TO ETIQUETTE MENU
-	*/
   app.hears("Etiquette​ 🎩", ctx => {
     return ctx.reply("Etiquette​", etiquette).then();
   });
-
-  /*********************
-	  ETIQUETTE Menu
-	@wv support, rovia/dreamtrips, goldsupport, platinum support, home
-	*********************/
 
   const etiquette = Telegraf.Extra
     .markdown()
@@ -81,9 +48,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* 'Edification 🗣' reply
-	*/
   app.hears("Edification 🗣", ctx => {
     return ctx
       .reply(
@@ -92,9 +56,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Before ⏪' reply
-	*/
   app.hears("Before ⏪", ctx => {
     return ctx
       .reply(
@@ -103,9 +64,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'During ▶️' reply
-	*/
   app.hears("During ▶️", ctx => {
     return ctx
       .reply(
@@ -114,9 +72,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'After ⏩' reply
-	*/
   app.hears("After ⏩", ctx => {
     return ctx
       .reply(
@@ -125,26 +80,13 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Back ↩️' reply from Etiquette menu
-	* DIRECT@ TO ETIQUETTE MENU
-	*/
   app.hears("Back ↩️", ctx => {
     return ctx.reply("Back", travelParty).then();
   });
 
-  /*
-	* 'How To Invite' reply
-	* DIRECT@ TO HOW TO INVITE MENU
-	*/
   app.hears("How to Invite 📲", ctx => {
     return ctx.reply("How to Invite", howToInvite).then();
   });
-
-  /*********************
-	  HOW TO INVITE MENU
-	@make a list, flye, close friends and family, acquaintances, strangers, back
-	*********************/
 
   const howToInvite = Telegraf.Extra
     .markdown()
@@ -165,11 +107,6 @@ module.exports = (app, Telegraf) => {
     return ctx.reply("Making a List", makeAList).then();
   });
 
-  /*********************
-	  MAKE A LIST MENU
-	@make a list, inviting fundamenals, back
-	*********************/
-
   const makeAList = Telegraf.Extra
     .markdown()
     .markup(m =>
@@ -184,9 +121,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* '1) Make a list' reply
-	*/
   app.hears("1) Make a List 📝", ctx => {
     return ctx
       .reply(
@@ -195,9 +129,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* '2) Inviting fundamentals' reply
-	*/
   app.hears("2) Inviting Basics 📞", ctx => {
     return ctx
       .reply(
@@ -206,17 +137,10 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Back: How To Invite ↩️' reply
-	*/
   app.hears("Back: How To Invite ↩️", ctx => {
     return ctx.reply("How to Invite", howToInvite).then();
   });
 
-  /*
-	* 'FLYE' reply
-	* NEEDS TO SEND FLYE PICTURE STILL
-	*/
   app.hears("FLYE Card❇️", ctx => {
     return ctx
       .reply(
@@ -225,18 +149,9 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Close Friends/Family' reply
-	* DIRECT@ CLOSE FRIENDS/FAMILY MENU
-	*/
   app.hears("Close Friends/Fam ❤️", ctx => {
     return ctx.reply("Close Friends/Family", closeFriendsAndFamily).then();
   });
-
-  /*********************
-	  Close Friends/Family Menu
-	@2 step text, tp text, back
-	*********************/
 
   const closeFriendsAndFamily = Telegraf.Extra
     .markdown()
@@ -249,9 +164,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* '2 Step Text 📲' reply
-	*/
   app.hears("2 Step Text 📲", ctx => {
     return ctx
       .reply(
@@ -260,9 +172,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'TP Text 🎊' reply
-	*/
   app.hears("TP Text 🎊", ctx => {
     return ctx
       .reply(
@@ -271,9 +180,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Acquaintances 💛' reply
-	*/
   app.hears("Acquaintances 💛", ctx => {
     return ctx
       .reply(
@@ -282,9 +188,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Strangers 🖤' reply
-	*/
   app.hears("Strangers 🖤", ctx => {
     return ctx
       .reply(
@@ -293,18 +196,9 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Checklist ✅ ' reply
-	* DIRECT@ TO CHECKLIST MENU
-	*/
   app.hears("Checklist ✅", ctx => {
     return ctx.reply("Checklist", checklist).then();
   });
-
-  /*********************
-	  CHECKLIST MENU
-	@checklist, presentation, back
-	*********************/
 
   const checklist = Telegraf.Extra
     .markdown()
@@ -320,9 +214,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* 'Checklist ✅ ' reply
-	*/
   app.hears("Checklist ✔️", ctx => {
     return ctx
       .reply(
@@ -331,9 +222,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Presentation 💻' reply
-	*/
   app.hears("Presentation 💻", ctx => {
     return ctx
       .reply(

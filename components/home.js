@@ -1,8 +1,4 @@
 module.exports = (app, Telegraf) => {
-  /*
-	* ResidualBot start command
-	* @parameters text, 'welcome' keyboard markup
-	*/
   app.command("/start", ctx => {
     ctx
       .reply(
@@ -12,28 +8,20 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /************
-  HOME MENU
-	@welcometotheteam, training, travelparty, help
-	*************/
-
   const home = Telegraf.Extra
     .markdown()
     .markup(m =>
       m
         .keyboard([
           [
-            m.callbackButton("Welcome 2 Team❗️"),
-            m.callbackButton("Training 🥊")
+            m.callbackButton("1) Welcome 2 Team❗️"),
+            m.callbackButton("2) Training 🥊")
           ],
-          [m.callbackButton("Travel Party 🎉"), m.callbackButton("Help 🔑")]
+          [m.callbackButton("3) Travel Party 🎉"), m.callbackButton("Help 🔑")]
         ])
         .resize()
     );
 
-  /*
-	* 'Home' reply
-	*/
   app.hears("Home 🏠", ctx => {
     return ctx.reply("Home", home).then();
   });

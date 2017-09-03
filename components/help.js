@@ -1,16 +1,7 @@
 module.exports = (app, Telegraf) => {
-  /*
-	* 'Help' reply
-	** @DIRECT TO 'HELP'
-	*/
   app.hears("Help 🔑", ctx => {
     return ctx.reply("Help", help).then();
   });
-
-  /*********************
-	  HELP Menu
-	@teamchats, teamapps, facebook groups, home
-	*********************/
 
   const help = Telegraf.Extra
     .markdown()
@@ -31,9 +22,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* 'VW Support 🌎' reply
-	*/
   app.hears("WV Support 🌎", ctx => {
     return ctx
       .reply(
@@ -42,9 +30,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Rovia/Dreamtrips 🛩' reply
-	*/
   app.hears("Rovia/Dreamtrips 🛩", ctx => {
     return ctx
       .reply(
@@ -53,9 +38,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Gold​ ​Support 🔱' reply
-	*/
   app.hears("Gold​ ​Support 🔱", ctx => {
     return ctx
       .reply(
@@ -64,19 +46,9 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Platinum​ ​Support​ 👑' reply
-	* DIRECT@ TO PLATINUM SUPPORT MENU
-	*/
   app.hears("Platinum​ ​Support​ 👑", ctx => {
     return ctx.reply("Platinum Support", platinum).then();
   });
-
-  /*********************
-	  PLATINUM SUPPORT MENU
-	@concierge, teledoc, roadside assistance, emergency evac,
-	identity protection, back
-	*********************/
 
   const platinum = Telegraf.Extra
     .markdown()
@@ -96,9 +68,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* 'Concierge ☎️' reply
-	*/
   app.hears("Concierge ☎️", ctx => {
     return ctx
       .reply(
@@ -107,9 +76,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Teledoc 🤒' reply
-	*/
   app.hears("Teledoc 🤒", ctx => {
     return ctx
       .reply(
@@ -118,9 +84,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Roadside Assistance 🚙' reply
-	*/
   app.hears("Roadside Assist 🚙", ctx => {
     return ctx
       .reply(
@@ -129,9 +92,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Emergency Evac 🚁' reply
-	*/
   app.hears("Emergency Evac 🚁", ctx => {
     return ctx
       .reply(
@@ -140,18 +100,12 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Identity Theft Protection 🔐' reply
-	*/
   app.hears("ID Resolution 🔐", ctx => {
     return ctx
       .reply("💠 ID Resolution 💠\n1-888-446-4047\n\nSelf-explanatory.")
       .then();
   });
 
-  /*
-	* 'Back: Help ↩️' reply
-	*/
   app.hears("Back: Help ↩️", ctx => {
     return ctx.reply("Help", help).then();
   });

@@ -7,11 +7,6 @@ module.exports = (app, Telegraf) => {
     return ctx.reply("Training", training).then();
   });
 
-  /*********************
-	  TRAINING Menu
-	@teamchats, teamapps, facebook groups, home
-	*********************/
-
   const training = Telegraf.Extra
     .markdown()
     .markup(m =>
@@ -23,9 +18,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* 'Events' reply
-	*/
   app.hears("Events 🏋️", ctx => {
     return ctx
       .reply(
@@ -34,9 +26,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Audios' reply
-	*/
   app.hears("Audios 🎧", ctx => {
     return ctx
       .reply(

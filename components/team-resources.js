@@ -12,11 +12,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*********************
-  Team Resources Menu
-	@teamchats, teamapps, facebook groups, home
-	*********************/
-
   const teamResources = Telegraf.Extra
     .markdown()
     .markup(m =>
@@ -28,9 +23,6 @@ module.exports = (app, Telegraf) => {
         .resize()
     );
 
-  /*
-	* 'Team Chats' reply
-	*/
   app.hears("Team Chats 👫", ctx => {
     return ctx
       .reply(
@@ -39,9 +31,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Team Apps' reply
-	*/
   app.hears("Team Apps 📱", ctx => {
     return ctx
       .reply(
@@ -50,9 +39,6 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  /*
-	* 'Facebook Groups' reply
-	*/
   app.hears("Facebook Groups 🌎", ctx => {
     return ctx
       .reply(
