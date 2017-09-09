@@ -11,7 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/SunooBertsch/Residual-Bot"
   },
-  "keywords": ["telegram"],
+  "keywords": [
+    "telegram"
+  ],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -20,6 +22,7 @@
   "homepage": "",
   "dependencies": {
     "axios": "^0.16.2",
+    "forever": "^0.15.3",
     "fs": "0.0.1-security",
     "telegraf": "^3.10.1"
   }
