@@ -1,5 +1,5 @@
 const Telegraf = require("telegraf");
-const keys = require("./keys");
+const keys = require("./config/keys");
 const app = new Telegraf(keys.clientID);
 
 require("./components/home")(app, Telegraf);
