@@ -3,7 +3,7 @@ module.exports = (app, Telegraf) => {
 	* 'Training 🥊' reply
 	** @DIRECT TO 'TRAINING'
 	*/
-  app.hears("Training 🥊", ctx => {
+  app.hears("2) Training 🥊", ctx => {
     return ctx.reply("Training", training).then();
   });
 

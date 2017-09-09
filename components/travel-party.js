@@ -1,7 +1,5 @@
-const fs = require("fs");
-
 module.exports = (app, Telegraf) => {
-  app.hears("Travel Party 🎉", ctx => {
+  app.hears("3) Travel Party 🎉", ctx => {
     return ctx.reply("Travel Party", travelParty).then();
   });
 
@@ -43,7 +41,7 @@ module.exports = (app, Telegraf) => {
         .keyboard([
           [m.callbackButton("Edification 🗣"), m.callbackButton("Before ⏪")],
           [m.callbackButton("During ▶️"), m.callbackButton("After ⏩ ")],
-          [m.callbackButton("Back ↩️")]
+          [m.callbackButton("Back: Travel Party ↩️")]
         ])
         .resize()
     );
@@ -80,7 +78,7 @@ module.exports = (app, Telegraf) => {
       .then();
   });
 
-  app.hears("Back ↩️", ctx => {
+  app.hears("Back: Travel Party ↩️", ctx => {
     return ctx.reply("Back", travelParty).then();
   });
 
@@ -93,12 +91,12 @@ module.exports = (app, Telegraf) => {
     .markup(m =>
       m
         .keyboard([
-          [m.callbackButton("Make a List 📝"), m.callbackButton("FLYE ❇️")],
+          [m.callbackButton("Make a List 📝"), m.callbackButton("FLYE Card ❇️")],
           [
             m.callbackButton("Close Friends/Fam ❤️"),
             m.callbackButton("Acquaintances 💛")
           ],
-          [m.callbackButton("Strangers 🖤"), m.callbackButton("Back ↩️")]
+          [m.callbackButton("Strangers 🖤"), m.callbackButton("Back: Travel Party ↩️")]
         ])
         .resize()
     );
@@ -141,10 +139,10 @@ module.exports = (app, Telegraf) => {
     return ctx.reply("How to Invite", howToInvite).then();
   });
 
-  app.hears("FLYE Card❇️", ctx => {
+  app.hears("FLYE Card ❇️", ctx => {
     return ctx
       .reply(
-        "STEP 1:​\nYou - “Hey Bob! Trust all is well! I got an important question for you...”\n​Bob - “What’s up?”\n\nSTEP 2:​\nYou - “Have you seen this yet!!?”\n\nSTEP 3:​ \nYou - “I got early access!! We got to talk before this thing goes viral!!\nYou free today to grab coffee real quick?”\n\n🚫 Make sure the pic you are sending does NOT include the word “FLYE” on it.\n📲 For more options, go to “Step 5” in the “Flye” Section from the ChillinWW App.\nPassword: boomer1"
+        "STEP 1:​\nYou - “Hey Bob! Trust all is well! I got an important question for you...”\n​Bob - “What’s up?”\n\nSTEP 2:​\nYou - “Have you seen this yet!!?”\nhttps://giphy.com/gifs/3ohhwDzkVqbnWkEfUQ\nBob - \"No... what's that?\"\n\nSTEP 3:​ \nYou - “I got early access!! We got to talk before this thing goes viral!!\nYou free today to grab coffee real quick?”\n\n🚫 Make sure the pic you are sending does NOT include the word “FLYE” on it.\n📲 For more options, go to “Step 5” in the “Flye” Section from the ChillinWW App.\nPassword: boomer1"
       )
       .then();
   });
@@ -209,7 +207,7 @@ module.exports = (app, Telegraf) => {
             m.callbackButton("Checklist ✔️"),
             m.callbackButton("Presentation 💻")
           ],
-          [m.callbackButton("Back ↩️")]
+          [m.callbackButton("Back: Travel Party ↩️")]
         ])
         .resize()
     );

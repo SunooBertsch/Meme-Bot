@@ -9,17 +9,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SunooBertsch/TelegramBotReactJS.git"
+    "url": "git+https://github.com/SunooBertsch/Residual-Bot"
   },
-  "keywords": [
-    "telegram"
-  ],
+  "keywords": ["telegram"],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SunooBertsch/TelegramBotReactJS/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/SunooBertsch/TelegramBotReactJS#readme",
+  "homepage": "",
   "dependencies": {
     "axios": "^0.16.2",
     "fs": "0.0.1-security",
