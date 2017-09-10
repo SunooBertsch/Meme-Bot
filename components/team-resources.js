@@ -3,7 +3,7 @@ module.exports = (app, Telegraf) => {
 	* 'Welcome To The Team 🤗' reply
 	** @DIRECT TO 'TEAM RESOURCES'
 	*/
-  app.hears("1) Welcome to the team❗", ctx => {
+  app.hears("1) Welcome 2 Team❗️", ctx => {
     return ctx
       .reply(
         "Welcome to the team❗️\n\nGo through the buttons below to make sure you’re connected to everything WorldVentures...",
