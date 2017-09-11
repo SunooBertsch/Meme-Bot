@@ -79,7 +79,7 @@ module.exports = (app, Telegraf) => {
   app.hears("Teledoc 🤒", ctx => {
     return ctx
       .reply(
-        "💠 Teledoc 💠\n1-800-835-2362\n\nNot feeling well and you don’t have time for a doctor appointment? Don’t want to wait 3 hours in urgent care for something that can be diagnosed over the phone? Talk to a real doctor via audio or video call and pick up any prescribed medications at your local pharmacy.\n\n      To set up your account online go to: www.teledoc.com\n      Promo Code: “WORLD VENTURES”"
+        "💠 Teledoc 💠\n1-800-835-2362\n\nNot feeling well and you don’t have time for a doctor appointment? Don’t want to wait 3 hours in urgent care for something that can be diagnosed over the phone? Talk to a real doctor via audio or video call and pick up any prescribed medications at your local pharmacy.\n\nTo set up your account online go to: www.teledoc.com\nPromo Code: “WORLD VENTURES”"
       )
       .then();
   });

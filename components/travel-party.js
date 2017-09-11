@@ -91,12 +91,18 @@ module.exports = (app, Telegraf) => {
     .markup(m =>
       m
         .keyboard([
-          [m.callbackButton("Make a List 📝"), m.callbackButton("FLYE Card ❇️")],
+          [
+            m.callbackButton("Make a List 📝"),
+            m.callbackButton("FLYE Card ❇️")
+          ],
           [
             m.callbackButton("Close Friends/Fam ❤️"),
             m.callbackButton("Acquaintances 💛")
           ],
-          [m.callbackButton("Strangers 🖤"), m.callbackButton("Back: Travel Party ↩️")]
+          [
+            m.callbackButton("Strangers 🖤"),
+            m.callbackButton("Back: Travel Party ↩️")
+          ]
         ])
         .resize()
     );
@@ -142,7 +148,7 @@ module.exports = (app, Telegraf) => {
   app.hears("FLYE Card ❇️", ctx => {
     return ctx
       .reply(
-        "STEP 1:​\nYou - “Hey Bob! Trust all is well! I got an important question for you...”\n​Bob - “What’s up?”\n\nSTEP 2:​\nYou - “Have you seen this yet!!?”\nhttps://giphy.com/gifs/3ohhwDzkVqbnWkEfUQ\nBob - \"No... what's that?\"\n\nSTEP 3:​ \nYou - “I got early access!! We got to talk before this thing goes viral!!\nYou free today to grab coffee real quick?”\n\n🚫 Make sure the pic you are sending does NOT include the word “FLYE” on it.\n📲 For more options, go to “Step 5” in the “Flye” Section from the ChillinWW App.\nPassword: boomer1"
+        'STEP 1:​\nYou - “Hey Bob! Trust all is well! I got an important question for you...”\n​Bob - “What’s up?”\n\nSTEP 2:​\nYou - “Have you seen this yet!!?”\n 👉 INSERT FLYE CARD GIF\nBob - "No... what\'s that?"\n\nSTEP 3:​ \nYou - “I got early access!! We got to talk before this thing goes viral!!\nYou free today to grab coffee real quick?”\n\n📲 For more options, go to “Step 5” in the “Flye” Section from the ChillinWW App.\nPassword: boomer1\n\n🚫 Make sure the pic you are sending does NOT include the word “FLYE” on it.\n\n👇FLYE CARD GIF'
       )
       .then();
   });
@@ -215,7 +221,7 @@ module.exports = (app, Telegraf) => {
   app.hears("Checklist ✔️", ctx => {
     return ctx
       .reply(
-        "KEEP IT SIMPLE & DUPLICATABLE\n\n✅ Music--before & after prez. Keep it clean, loud & upbeat! You can find the TP Mix in the “Audios” section of the ChillinWW App.\n✅  Printed Applications--Enough for all guests! You can find them in the “File” section of our Team Unstoppable Channel or in your BackOffice (www.domain.worldventures.biz).\n✅ Updated Presentation--Downloaded to Smart TV/Laptop\n✅ Technology--test all tech at least 3hrs prior to starting\n✅ Seating--facing away from the doorway\n✅ Snacks--simple chips/dip & water. No elaborate meals!"
+        "KEEP IT SIMPLE & DUPLICATABLE\n\n✅ Music--before & after prez. Keep it clean, loud & upbeat! You can find the TP Mix in the “Audios” section of the ChillinWW App.\n❇️  Printed Applications--Enough for all guests! You can find them at\nwww.chillinworldwide.com➡️ Documents➡️ Product App\n❇️ Printed Income Disclosure Statements--Enough for all of your guests! You can find them at www.chillinworldwide.com➡️Documents➡️IDS\n✅ Updated Presentation--Downloaded to Smart TV/Laptop\n✅ Technology--test all tech at least 3hrs prior to starting\n✅ Seating--facing away from the doorway\n✅ Snacks--simple chips/dip & water. No elaborate meals!"
       )
       .then();
   });
