@@ -148,7 +148,7 @@ module.exports = (app, Telegraf) => {
   app.hears("FLYE Card ❇️", ctx => {
     return ctx
       .reply(
-        'STEP 1:​\nYou - “Hey Bob! Trust all is well! I got an important question for you...”\n​Bob - “What’s up?”\n\nSTEP 2:​\nYou - “Have you seen this yet!!?”\n 👉 INSERT FLYE CARD GIF\nBob - "No... what\'s that?"\n\nSTEP 3:​ \nYou - “I got early access!! We got to talk before this thing goes viral!!\nYou free today to grab coffee real quick?”\n\n📲 For more options, go to “Step 5” in the “Flye” Section from the ChillinWW App.\nPassword: boomer1\n\n🚫 Make sure the pic you are sending does NOT include the word “FLYE” on it.\n\n👇FLYE CARD GIF'
+        'STEP 1:​\nYou - “Hey Bob! Trust all is well! I got an important question for you...”\n​Bob - “What’s up?”\n\nSTEP 2:​\nYou - “Have you seen this yet!!?”\n 👉 INSERT FLYE CARD GIF\nBob - "No... what\'s that?"\n\nSTEP 3:​ \nYou - “I got early access!! We got to talk before this thing goes viral!!\nYou free today to grab coffee real quick?”\n\n📲 For more options, go to “Step 5” in the “Flye” Section from the ChillinWW App.\nPassword: boomer1\n\n🚫 Make sure the pic you are sending does NOT include the word “FLYE” on it.\n\n👇FLYE CARD GIF\nhttps://giphy.com/gifs/3ohhwDzkVqbnWkEfUQ'
       )
       .then();
   });
