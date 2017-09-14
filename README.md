@@ -15,6 +15,10 @@ Created a custom Telegram keyboard with predeterined responses to speed up inter
 
 ![](images/TelegramGIF.gif)
 
+![](images/TelegramStats.jpg)
+
+![](images/JavascriptLogo.jpg)
+
 *Developers:* <br />
 **Dennis Dang** <br/>
 **Sunoo Bertsch**
