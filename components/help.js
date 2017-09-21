@@ -16,6 +16,10 @@ module.exports = (app, Telegraf) => {
       reply:
         "💠 Concierge 💠\n1-855-896-2815\nconcierge@worldventures.com\n\nFor travel help, driving directions, restaurant reservations, sending flowers or simply asking a question- your DreamTrips Concierge can help. Available 24/7. \n\nHave your WorldVentures ID# found in your welcome e-mail READY."
     },
+    platinumSupport: {
+      listen: "Platinum​ ​Support​ 👑",
+      reply: "Platinum Support"
+    },
     concierge: {
       listen: "Concierge ☎️",
       reply:
@@ -40,75 +44,71 @@ module.exports = (app, Telegraf) => {
       listen: "ID Resolution 🔐",
       reply: "💠 ID Resolution 💠\n1-888-446-4047\n\nSelf-explanatory."
     },
+    help: {
+      listen: "Help 🔑",
+      reply: "Help"
+    },
     home: {
       listen: "Home 🏠"
+    },
+    back: {
+      listen: "Back: Help ↩️",
+      reply: "Help"
     }
   };
 
-  Listeners.back = {
-    listen: "Back: Help ↩️",
-    reply: "Help",
-    keyboard: Telegraf.Extra.markup(markup =>
-      markup
-        .keyboard([
-          [
-            markup.callbackButton(Listeners.wvSupport.listen),
-            markup.callbackButton(Listeners.roviaSupport.listen)
-          ],
-          [
-            markup.callbackButton(Listeners.goldSupport.listen),
-            markup.callbackButton("Platinum​ ​Support​ 👑")
-          ],
+  Listeners.keyboard = Telegraf.Extra.markup(markup =>
+    markup
+      .keyboard([
+        [
+          markup.callbackButton(Listeners.wvSupport.listen),
+          markup.callbackButton(Listeners.roviaSupport.listen)
+        ],
+        [
+          markup.callbackButton(Listeners.goldSupport.listen),
+          markup.callbackButton(Listeners.platinumSupport.listen)
+        ],
 
-          [markup.callbackButton(Listeners.home.listen)]
-        ])
-        .resize()
-    )
-  };
+        [markup.callbackButton(Listeners.home.listen)]
+      ])
+      .resize()
+  );
 
-  Listeners.help = {
-    listen: "Help 🔑",
-    reply: "Help",
-    keyboard: Telegraf.Extra.markup(markup =>
-      markup
-        .keyboard([
-          [
-            markup.callbackButton(Listeners.wvSupport.listen),
-            markup.callbackButton(Listeners.roviaSupport.listen)
-          ],
-          [
-            markup.callbackButton(Listeners.goldSupport.listen),
-            markup.callbackButton("Platinum​ ​Support​ 👑")
-          ],
+  Listeners.keyboard = Telegraf.Extra.markup(markup =>
+    markup
+      .keyboard([
+        [
+          markup.callbackButton(Listeners.wvSupport.listen),
+          markup.callbackButton(Listeners.roviaSupport.listen)
+        ],
+        [
+          markup.callbackButton(Listeners.goldSupport.listen),
+          markup.callbackButton(Listeners.platinumSupport.listen)
+        ],
 
-          [markup.callbackButton(Listeners.home.listen)]
-        ])
-        .resize()
-    )
-  };
+        [markup.callbackButton(Listeners.home.listen)]
+      ])
+      .resize()
+  );
 
-  Listeners.platinumSupport = {
-    listen: "Platinum​ ​Support​ 👑",
-    reply: "Platinum Support",
-    keyboard: Telegraf.Extra.markup(markup =>
-      markup
-        .keyboard([
-          [
-            markup.callbackButton(Listeners.concierge.listen),
-            markup.callbackButton(Listeners.teledoc.listen)
-          ],
-          [
-            markup.callbackButton(Listeners.roadside.listen),
-            markup.callbackButton(Listeners.evac.listen)
-          ],
-          [
-            markup.callbackButton(Listeners.resolution.listen),
-            markup.callbackButton("Back: Help ↩️")
-          ]
-        ])
-        .resize()
-    )
-  };
+  Listeners.keyboard = Telegraf.Extra.markup(markup =>
+    markup
+      .keyboard([
+        [
+          markup.callbackButton(Listeners.concierge.listen),
+          markup.callbackButton(Listeners.teledoc.listen)
+        ],
+        [
+          markup.callbackButton(Listeners.roadside.listen),
+          markup.callbackButton(Listeners.evac.listen)
+        ],
+        [
+          markup.callbackButton(Listeners.resolution.listen),
+          markup.callbackButton(Listeners.back.listen)
+        ]
+      ])
+      .resize()
+  );
 
   for (let key in Listeners) {
     const Listener = Listeners[key];
